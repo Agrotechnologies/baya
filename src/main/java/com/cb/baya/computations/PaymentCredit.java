@@ -33,7 +33,9 @@ public class PaymentCredit extends BaseEntity {
   @Column(name = "credit_date")
   private LocalDateTime creditDate;
 
-  @ToString.Exclude
-  @OneToOne(mappedBy = "job_request_credited")
-  private JobRequest jobRequest;
+//  @ToString.Exclude
+//  @OneToOne(mappedBy = "jobrequest_id")
+@OneToOne
+@JoinColumn(name = "jobrequest_id", referencedColumnName = "id")
+private JobRequest jobRequest;
 }

@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(value = "/points")
 public class PaymentsRedemptionApi {
 
+
   private final PaymentsRedemptionService redemptionService;
 
   @PostMapping(value = "/redeem")
