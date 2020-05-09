@@ -6,12 +6,14 @@ import com.cb.baya.location.Province;
 import com.cb.baya.location.ProvinceDto;
 import com.cb.baya.operation.Operation;
 import com.cb.baya.operation.OperationDto;
+import com.cb.baya.payments.Payment;
+import com.cb.baya.payments.PaymentDto;
 import com.cb.baya.role.Role;
 import com.cb.baya.role.RoleDTO;
 import com.cb.baya.serviceimplement.ServiceImplement;
 import com.cb.baya.serviceimplement.ServiceImplementDto;
-import com.cb.baya.serviceweights.SubscriberWeightsDto;
 import com.cb.baya.serviceweights.SubscriberWeights;
+import com.cb.baya.serviceweights.SubscriberWeightsDto;
 import com.cb.baya.tsp.ServiceProvider;
 import com.cb.baya.tsp.ServiceProviderDto;
 import com.cb.baya.user.User;
@@ -52,5 +54,9 @@ public interface TypeMapper {
   OperationDto map(Operation operationCreated);
 
   ProvinceDto map(Province province);
+
+  Payment map(PaymentDto paymentDto);
+
+  PaymentDto map(Payment payment);
 }
 

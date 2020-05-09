@@ -21,7 +21,7 @@ public class Operation extends BaseEntity {
   @Column(name = "name")
   private String name;
 
-  @Column(name = "cost_per_hectare")
-  private BigDecimal costPerHa;
+  @Column(name = "cost_per_trip")
+  private BigDecimal costPerTrip;
 
 }

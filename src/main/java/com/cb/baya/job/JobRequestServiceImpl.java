@@ -1,5 +1,6 @@
 package com.cb.baya.job;
 
+import com.cb.baya.computations.PaymentAwardService;
 import com.cb.baya.exception.BusinessException;
 import com.cb.baya.tsp.ServiceProviderService;
 import lombok.RequiredArgsConstructor;
@@ -30,7 +31,7 @@ public class JobRequestServiceImpl implements JobRequestService {
   private EntityManager em;
 
   private final JobRequestRepository jobRequestRepository;
-  private final PointsAwardService pointsAwardService;
+  private final PaymentAwardService paymentAwardService;
   private final ServiceProviderService tractorServiceProviderService;
 
   @Override
@@ -73,7 +74,7 @@ public class JobRequestServiceImpl implements JobRequestService {
     if (statusChange == 1) {
       switch (presentedStatus) {
         case COMPLETED:
-          pointsAwardService.allocatePoints(jobRequest);
+          paymentAwardService.allocatePoints(jobRequest);
           jobRequest.setStatus(COMPLETED);
           break;
         case ASSIGNED:
@@ -89,7 +90,7 @@ public class JobRequestServiceImpl implements JobRequestService {
   }
 
   private void assignJobToServiceProvider(JobRequest jobRequest) {
-    jobRequest.setTractorServiceProvider(jobRequest.getTractorServiceProvider());
+    jobRequest.setServiceProvider(jobRequest.getServiceProvider());
     jobRequest.setStatus(ASSIGNED);
   }
 

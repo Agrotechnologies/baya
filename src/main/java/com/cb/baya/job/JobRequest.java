@@ -2,6 +2,7 @@ package com.cb.baya.job;
 
 import com.cb.baya.common.BaseEntity;
 import com.cb.baya.location.District;
+import com.cb.baya.operation.Operation;
 import com.cb.baya.tsp.ServiceProvider;
 import lombok.Getter;
 import lombok.Setter;
@@ -37,6 +38,10 @@ public class JobRequest extends BaseEntity {
   @Column(name = "scheme", nullable = true)
   private String scheme;
 
+  @OneToOne
+  @JoinColumn(name = "operation_id", referencedColumnName = "id")
+  private Operation operation;
+
   @ManyToOne(fetch = FetchType.EAGER)
   private District district;
 
@@ -44,7 +49,7 @@ public class JobRequest extends BaseEntity {
   private int ward;
 
   @Column(name = "estimatedWeight", nullable = false)
-  private int estimatedWeight;
+  private BigDecimal estimatedWeight;
 
   @Field
   @Column(name = "village", length = 50, nullable = false)
@@ -70,11 +75,3 @@ public class JobRequest extends BaseEntity {
 
 }
 
-/**
- * Crud for
- * <p>
- * service type
- * Job
- * Operation
- * Reward
- */
