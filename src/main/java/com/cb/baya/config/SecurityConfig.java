@@ -1,4 +1,4 @@
-package com.cb.baya.config;//package com.cbsolutions.smartfarmer.config;
+//package com.cbsolutions.smartfarmer.config;
 //
 //import com.cbsolutions.smartfarmer.security.JWTConfigurer;
 //import com.cbsolutions.smartfarmer.security.JwtAuthenticationFilter;
