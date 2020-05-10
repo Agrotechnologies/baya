@@ -1,4 +1,4 @@
-package com.cb.baya.role;
-
-public interface RoleService {
-}
+//package com.cb.baya.role;
+//
+//public interface RoleService {
+//}

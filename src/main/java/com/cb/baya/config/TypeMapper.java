@@ -8,17 +8,18 @@ import com.cb.baya.operation.Operation;
 import com.cb.baya.operation.OperationDto;
 import com.cb.baya.payments.Payment;
 import com.cb.baya.payments.PaymentDto;
-import com.cb.baya.role.Role;
-import com.cb.baya.role.RoleDTO;
 import com.cb.baya.serviceimplement.ServiceImplement;
 import com.cb.baya.serviceimplement.ServiceImplementDto;
 import com.cb.baya.serviceweights.SubscriberWeights;
 import com.cb.baya.serviceweights.SubscriberWeightsDto;
 import com.cb.baya.tsp.ServiceProvider;
 import com.cb.baya.tsp.ServiceProviderDto;
-import com.cb.baya.user.User;
-import com.cb.baya.user.UserDTO;
 import org.mapstruct.Mapper;
+
+//import com.cb.baya.role.Role;
+//import com.cb.baya.role.RoleDTO;
+//import com.cb.baya.user.User;
+//import com.cb.baya.user.UserDTO;
 
 //
 
@@ -26,13 +27,13 @@ import org.mapstruct.Mapper;
 public interface TypeMapper {
 
 
-  User map(UserDTO user);
+//  User map(UserDTO user);
+//
+//  UserDTO map(User user);
 
-  UserDTO map(User user);
-
-  RoleDTO map(Role role);
-
-  Role map(RoleDTO role);
+//  RoleDTO map(Role role);
+//
+//  Role map(RoleDTO role);
 
   ServiceProvider map(ServiceProviderDto providerDto);
 

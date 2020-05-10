@@ -1,7 +1,8 @@
 package com.cb.baya.common;
 
-import com.cb.baya.audit.AuditTrailListener;
-import com.cb.baya.audit.AuditedEntity;
+//import com.cb.baya.audit.AuditTrailListener;
+//import com.cb.baya.audit.AuditedEntity;
+
 import lombok.ToString;
 
 import javax.persistence.*;
@@ -9,8 +10,8 @@ import java.io.Serializable;
 
 @ToString
 @MappedSuperclass
-@EntityListeners(AuditTrailListener.class)
-public abstract class BaseEntity extends AuditedEntity<String>
+//@EntityListeners(AuditTrailListener.class)
+public abstract class BaseEntity
   implements Serializable {
 
   private Long id;
