@@ -43,7 +43,6 @@ public class ServiceProvider extends BaseEntity {
   @OneToMany(mappedBy = "serviceProvider")
   private List<JobRequest> jobRequests;
 
-
   @OneToOne
   @JoinColumn(name = "subscriber_weights_id", referencedColumnName = "id")
   private SubscriberWeights subscriberWeights;

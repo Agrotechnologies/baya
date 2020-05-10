@@ -21,7 +21,7 @@ import java.util.Optional;
 public class ServiceProviderServiceImpl implements ServiceProviderService {
 
   private final ServiceProviderRepository providerRepository;
-  private final SubscriberWeightsService subscriberPointsService;
+  private final SubscriberWeightsService subscriberWeightsService;
 
   @Override
   public ServiceProvider register(ServiceProvider serviceProvider) {
@@ -31,7 +31,7 @@ public class ServiceProviderServiceImpl implements ServiceProviderService {
     subscriberWeights.setMsisdn(serviceProvider.getMsisdn());
     subscriberWeights.setStage(Stage.STAGE_1);
     subscriberWeights.setWeightsDone(BigDecimal.ZERO);
-    subscriberPointsService.save(subscriberWeights);
+    subscriberWeightsService.save(subscriberWeights);
     serviceProvider.setSubscriberWeights(subscriberWeights);
     return providerRepository.save(serviceProvider);
   }
