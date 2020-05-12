@@ -25,7 +25,7 @@ public class SubscriberWeightApi {
   private final TypeMapper typeMapper;
   private final ServiceProviderService tractorServiceProviderService;
 
-  @GetMapping(value = "/points/{msisdn}")
+  @GetMapping(value = "/weights/{msisdn}")
   public ApiResponse<SubscriberWeightsDto> findPoints(@PathVariable("msisdn") String msisdn) {
 
     log.debug("finding subscriber weights for servicesprovider {}", msisdn);

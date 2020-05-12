@@ -1,8 +1,8 @@
 package com.cb.baya.farmer.batch;
 
 import com.cb.baya.common.BaseEntity;
-import com.cb.baya.farmer.Bell;
 import com.cb.baya.farmer.Farmer;
+import com.cb.baya.farmer.bell.Bell;
 
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;

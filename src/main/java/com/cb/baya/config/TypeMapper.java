@@ -2,6 +2,8 @@ package com.cb.baya.config;
 
 import com.cb.baya.farmer.Farmer;
 import com.cb.baya.farmer.FarmerDto;
+import com.cb.baya.farmer.bell.Bell;
+import com.cb.baya.farmer.bell.BellDto;
 import com.cb.baya.job.JobRequest;
 import com.cb.baya.job.JobRequestDto;
 import com.cb.baya.location.Province;
@@ -66,5 +68,9 @@ public interface TypeMapper {
   Farmer map(FarmerDto farmerDto);
 
   FarmerDto map(Farmer farmer);
+
+  Bell map(BellDto bellDto);
+
+  BellDto map(Bell bell);
 }
 
