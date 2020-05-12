@@ -24,19 +24,19 @@ import java.util.stream.Collectors;
 @RequestMapping("/tsp")
 public class ServiceProviderApi implements CrudApi<ServiceProviderDto> {
 
-  private final ServiceProviderService tspService;
+  private final ServiceProviderService serviceProviderService;
   private final TypeMapper mapper;
 
   @PostMapping(value = "/register")
   public ApiResponse<ServiceProviderDto> register(@Valid @RequestBody ServiceProviderDto providerDto) {
     log.info("New Registration : {} ", providerDto);
-    final ServiceProvider serviceProvider = tspService.register(mapper.map(providerDto));
+    final ServiceProvider serviceProvider = serviceProviderService.register(mapper.map(providerDto));
     return new ApiResponse<>(HttpStatus.OK.value(), mapper.map(serviceProvider));
   }
 
   @GetMapping(value = "/find/{msisdn}")
   public ApiResponse<ServiceProviderDto> findServiceProvider(@PathVariable(name = "msisdn") final String msisdn) {
-    final Optional<ServiceProvider> tractorServiceProvider = tspService.findByMsisdn(msisdn);
+    final Optional<ServiceProvider> tractorServiceProvider = serviceProviderService.findByMsisdn(msisdn);
     return tractorServiceProvider.map(tsp -> new ApiResponse<>(HttpStatus.OK.value(), mapper.map(tsp)))
       .orElseThrow(() -> new BusinessException("Service provider with msisdn " + msisdn + "not found"));
   }
@@ -44,14 +44,14 @@ public class ServiceProviderApi implements CrudApi<ServiceProviderDto> {
   @Override
   public ApiResponse<ServiceProviderDto> create(ServiceProviderDto providerDto) {
     log.info("New Registration : {} ", providerDto);
-    final ServiceProvider serviceProvider = tspService.register(mapper.map(providerDto));
+    final ServiceProvider serviceProvider = serviceProviderService.register(mapper.map(providerDto));
     return new ApiResponse<>(HttpStatus.OK.value(), mapper.map(serviceProvider));
   }
 
   @Override
   public ApiResponse<ServiceProviderDto> update(ServiceProviderDto serviceProviderDto) {
     log.info("Update Tractor Service Provider : {} ", serviceProviderDto);
-    final ServiceProvider serviceProvider = tspService.update(mapper.map(serviceProviderDto));
+    final ServiceProvider serviceProvider = serviceProviderService.update(mapper.map(serviceProviderDto));
     return new ApiResponse<>(HttpStatus.OK.value(), mapper.map(serviceProvider));
   }
 
@@ -62,18 +62,18 @@ public class ServiceProviderApi implements CrudApi<ServiceProviderDto> {
 
   @Override
   public ApiResponse<PaginationResult<ServiceProviderDto>> findAll(String search, Integer page, Integer size, String sortBy) {
-    List<ServiceProviderDto> tspDtos = tspService.findAll(PageRequest.of(page - 1, size, Sort.by(sortBy)))
+    List<ServiceProviderDto> tspDtos = serviceProviderService.findAll(PageRequest.of(page - 1, size, Sort.by(sortBy)))
       .stream()
       .map(mapper::map)
       .collect(Collectors.toList());
 
-    PaginationResult<ServiceProviderDto> pagedTsp = PaginationResult.pagination(tspDtos, tspService.total(), page, size);
+    PaginationResult<ServiceProviderDto> pagedTsp = PaginationResult.pagination(tspDtos, serviceProviderService.total(), page, size);
     return new ApiResponse<>(HttpStatus.OK.value(), pagedTsp);
   }
 
   @Override
   public ApiResponse<ServiceProviderDto> find(final Long id) {
-    final Optional<ServiceProvider> tractorServiceProvider = tspService.findById(id);
+    final Optional<ServiceProvider> tractorServiceProvider = serviceProviderService.findById(id);
     return tractorServiceProvider.map(tsp -> new ApiResponse<>(HttpStatus.OK.value(), mapper.map(tsp)))
       .orElseThrow(() -> new BusinessException("Service provider with Id " + id + "not found"));
   }

@@ -21,7 +21,7 @@ import java.util.List;
 @Access(AccessType.FIELD)
 public class ServiceProvider extends BaseEntity {
 
-  @Column(name = "msisdn", unique = true, nullable = false)
+  @Column(name = "msisdn", length = 50, unique = true, nullable = false)
   private String msisdn;
 
   @Column(name = "first_name", length = 50, nullable = false)

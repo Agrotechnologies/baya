@@ -30,7 +30,7 @@ public class Farmer extends BaseEntity {
   @Column(name = "last_name", length = 50, nullable = false)
   private String lastName;
 
-  @ManyToOne(fetch = FetchType.EAGER)
+  @ManyToOne(cascade = CascadeType.ALL)
   private District district;
 
   @Column(name = "longitude", length = 50, nullable = true)
