@@ -2,16 +2,14 @@ package com.cb.baya.farmer.batch;
 
 import com.cb.baya.common.BaseEntity;
 import com.cb.baya.farmer.Farmer;
-import com.cb.baya.farmer.bell.Bell;
 
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
-import java.util.List;
 
 public class Batch extends BaseEntity {
   private String batchNo;
   private String batchDescription;
-  private List<Bell> bells;
+
   private int totalBells;
   private int estimateWeight;
   private int actualWeight;

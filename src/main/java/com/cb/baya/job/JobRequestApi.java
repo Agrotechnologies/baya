@@ -29,6 +29,7 @@ public class JobRequestApi implements CrudApi<JobRequestDto> {
 
   @Override
   public ApiResponse<JobRequestDto> create(JobRequestDto jobRequestDto) {
+    log.info("Creating a Job Request {}", jobRequestDto);
     final JobRequest jobCreated = jobRequestService.createJobRequest(mapper.map(jobRequestDto));
     return new ApiResponse<>(HttpStatus.OK.value(), mapper.map(jobCreated));
   }

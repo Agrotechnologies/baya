@@ -17,7 +17,6 @@ public interface ServiceProviderService {
 
   List<ServiceProvider> findByFirstName(String firstName);
 
-  //List<TractorServiceProvider> findAll(int page, int size, String sortBy);
 
   Long total();
 

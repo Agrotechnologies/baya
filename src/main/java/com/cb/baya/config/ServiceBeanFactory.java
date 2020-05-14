@@ -1,8 +1,8 @@
-//package com.cb.baya.config;
-//
-//
-//public class ServiceBeanFactory {
-//
-//
-//}
+package com.cb.baya.config;
+
+
+public class ServiceBeanFactory {
+
+
+}
 
