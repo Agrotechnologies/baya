@@ -24,7 +24,7 @@ public class Bhero extends BaseEntity {
   @Column(name = "bell_status")
   private BellStatus bellStatus;
 
-  @Column(name = "classification", length = 9, unique = true, nullable = false)
+  @Column(name = "classification", nullable = false)
   private String classification;
 
   @ManyToOne(cascade = CascadeType.ALL)
