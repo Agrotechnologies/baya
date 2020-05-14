@@ -53,7 +53,7 @@ public class BheroAPI implements CrudApi<BheroDto> {
   @Override
   public ApiResponse<BheroDto> update(BheroDto bheroDto) {
 
-    log.info("Update Bell Infomation : {} ", bheroDto);
+    log.info("Update Bell Information : {} ", bheroDto);
     final Bhero bhero = bheroService.update(mapper.map(bheroDto));
     return new ApiResponse<>(HttpStatus.OK.value(), mapper.map(bhero));
   }

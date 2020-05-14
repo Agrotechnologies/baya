@@ -21,13 +21,13 @@ public class Bhero extends BaseEntity {
   private int bellNo;
   @Column(name = "bell_weight")
   private int bellWeight;
-  @Column(name = "bell_weight")
+  @Column(name = "bell_status")
   private BellStatus bellStatus;
 
   @Column(name = "classification", length = 9, unique = true, nullable = false)
   private String classification;
 
-  @ManyToOne(fetch = FetchType.EAGER)
+  @ManyToOne(cascade = CascadeType.ALL)
   private Farmer farmer;
 
 }
