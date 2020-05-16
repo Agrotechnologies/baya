@@ -1,5 +1,7 @@
 package com.cb.baya.config;
 
+import com.cb.baya.batches.Batches;
+import com.cb.baya.batches.BatchesDto;
 import com.cb.baya.bhero.Bhero;
 import com.cb.baya.bhero.BheroDto;
 import com.cb.baya.farmer.Farmer;
@@ -20,24 +22,10 @@ import com.cb.baya.tsp.ServiceProvider;
 import com.cb.baya.tsp.ServiceProviderDto;
 import org.mapstruct.Mapper;
 
-//import com.cb.baya.role.Role;
-//import com.cb.baya.role.RoleDTO;
-//import com.cb.baya.user.User;
-//import com.cb.baya.user.UserDTO;
-
-//
 
 @Mapper(componentModel = "spring")
 public interface TypeMapper {
 
-
-//  User map(UserDTO user);
-//
-//  UserDTO map(User user);
-
-//  RoleDTO map(Role role);
-//
-//  Role map(RoleDTO role);
 
   ServiceProvider map(ServiceProviderDto providerDto);
 
@@ -73,10 +61,9 @@ public interface TypeMapper {
 
   BheroDto map(Bhero bhero);
 
-//  Bell map(BellDto bellDto);
-//
-//  BellDto map(Bell bell);
 
+  Batches map(BatchesDto batchesDto);
 
+  BatchesDto map(Batches batches);
 }
 

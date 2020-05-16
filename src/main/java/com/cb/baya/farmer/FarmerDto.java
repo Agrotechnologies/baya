@@ -7,6 +7,7 @@ import lombok.Data;
 import java.io.Serializable;
 
 @Data
+
 public class FarmerDto extends BaseDto implements Serializable {
 
   private String msisdn;

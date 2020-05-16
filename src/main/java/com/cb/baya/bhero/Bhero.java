@@ -1,5 +1,6 @@
 package com.cb.baya.bhero;
 
+import com.cb.baya.batches.Batches;
 import com.cb.baya.common.BaseEntity;
 import com.cb.baya.farmer.Farmer;
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -11,7 +12,7 @@ import lombok.ToString;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "bhero", indexes = {@Index(name = "indx_bero_bellNo", columnList = "id", unique = true)})
+@Table(name = "bhero", indexes = {@Index(name = "indx_bero_id", columnList = "id", unique = true)})
 @Getter
 @Setter
 @ToString
@@ -34,5 +35,10 @@ public class Bhero extends BaseEntity {
   @JoinColumn(name = "farmers_id", nullable = false)
   @JsonIgnore
   private Farmer farmer;
+
+  @ManyToOne(fetch = FetchType.LAZY, optional = false)
+  @JoinColumn(name = "batches_id", nullable = false)
+  @JsonIgnore
+  private Batches batches;
 
 }

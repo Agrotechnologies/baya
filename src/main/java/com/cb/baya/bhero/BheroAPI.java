@@ -44,7 +44,6 @@ public class BheroAPI implements CrudApi<BheroDto> {
 
   @Override
   public ApiResponse<BheroDto> create(BheroDto bheroDto) {
-
     log.info("New Registration : {} ", bheroDto);
     final Bhero bhero = bheroService.register(mapper.map(bheroDto));
     return new ApiResponse<>(HttpStatus.OK.value(), mapper.map(bhero));
