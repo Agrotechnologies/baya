@@ -2,6 +2,8 @@ package com.cb.baya.farmer;
 
 import com.cb.baya.common.BaseEntity;
 import com.cb.baya.location.District;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -14,6 +16,7 @@ import javax.persistence.*;
 @Setter
 @ToString
 @Access(AccessType.FIELD)
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 
 
 public class Farmer extends BaseEntity {
@@ -30,7 +33,9 @@ public class Farmer extends BaseEntity {
   @Column(name = "last_name", length = 50, nullable = false)
   private String lastName;
 
-  @ManyToOne(cascade = CascadeType.ALL)
+  @ManyToOne(fetch = FetchType.LAZY, optional = false)
+  @JoinColumn(name = "district_id", nullable = false)
+  @JsonIgnore
   private District district;
 
   @Column(name = "longitude", length = 50, nullable = true)
@@ -40,6 +45,10 @@ public class Farmer extends BaseEntity {
 
   @Column(name = "village", length = 50, nullable = false)
   private String Village;
+
+
+
+
 
 
 }
