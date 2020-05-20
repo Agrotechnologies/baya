@@ -18,7 +18,6 @@ import javax.persistence.*;
 @ToString
 @Access(AccessType.FIELD)
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-
 public class Bhero extends BaseEntity {
 
   @Column(name = "bell_no", unique = true)
@@ -40,5 +39,6 @@ public class Bhero extends BaseEntity {
   @JoinColumn(name = "batches_id", nullable = false)
   @JsonIgnore
   private Batches batches;
+
 
 }

@@ -38,10 +38,9 @@ public class BatchesAPI implements CrudApi<BatchesDto> {
 
   @PostMapping(value = "/register")
   public ApiResponse<BatchesDto> register(@Valid @RequestBody BatchesDto batchesDto) {
+
     log.info("New Batch Creation : {} ", batchesDto);
     String classification = "Spanngy";
-    //bheroRepository.findByBellStatus(bellStatus);
-
     bheroService.findByClassification(classification);
     log.info("List of Bells : {} ", bheroService);
     List<Bhero> bhero = new ArrayList<>();

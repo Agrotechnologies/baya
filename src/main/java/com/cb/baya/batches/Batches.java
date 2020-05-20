@@ -1,6 +1,8 @@
 package com.cb.baya.batches;
 
 import com.cb.baya.common.BaseEntity;
+import com.cb.baya.trip.Trip;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.Setter;
@@ -27,5 +29,10 @@ public class Batches extends BaseEntity {
 
   @Column(name = "batch_status")
   private BatchStatus batchStatus;
+
+  @ManyToOne(fetch = FetchType.LAZY, optional = false)
+  @JoinColumn(name = "trip_id", nullable = false)
+  @JsonIgnore
+  private Trip trip;
 
 }

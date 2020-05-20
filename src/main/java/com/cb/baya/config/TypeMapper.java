@@ -18,6 +18,12 @@ import com.cb.baya.serviceimplement.ServiceImplement;
 import com.cb.baya.serviceimplement.ServiceImplementDto;
 import com.cb.baya.serviceweights.SubscriberWeights;
 import com.cb.baya.serviceweights.SubscriberWeightsDto;
+import com.cb.baya.transport.Transport;
+import com.cb.baya.transport.TransportDto;
+import com.cb.baya.transport.driver.Driver;
+import com.cb.baya.transport.driver.DriverDto;
+import com.cb.baya.transport.transporter.Transporter;
+import com.cb.baya.transport.transporter.TransporterDto;
 import com.cb.baya.tsp.ServiceProvider;
 import com.cb.baya.tsp.ServiceProviderDto;
 import org.mapstruct.Mapper;
@@ -65,5 +71,17 @@ public interface TypeMapper {
   Batches map(BatchesDto batchesDto);
 
   BatchesDto map(Batches batches);
+
+  Driver map(DriverDto driverDto);
+
+  DriverDto map(Driver driver);
+
+  Transporter map(TransporterDto transporterDto);
+
+  TransporterDto map(Transporter transporter);
+
+  Transport map(TransportDto transportDto);
+
+  TransportDto map(Transport transport);
 }
 
