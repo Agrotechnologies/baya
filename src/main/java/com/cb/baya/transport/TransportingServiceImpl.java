@@ -15,7 +15,7 @@ import java.util.Optional;
 @Slf4j
 @Transactional(propagation = Propagation.REQUIRED)
 
-public class TransportServiceImpl implements TransportService {
+public class TransportingServiceImpl implements TransportingService {
 
   private final TransportRepository transportRepository;
 

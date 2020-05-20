@@ -5,16 +5,13 @@ import org.springframework.data.domain.Pageable;
 import java.util.List;
 import java.util.Optional;
 
-
-public interface TransportService {
-
+public interface TransportingService {
 
   Transport register(Transport transport);
 
-  Optional<Transport> findByRegNumber(String regNumber);
+  Optional<Transport> findByRegNumber(String msidn);
 
   Optional<Transport> findById(long id);
-
 
   Long total();
 
