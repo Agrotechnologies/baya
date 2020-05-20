@@ -2,7 +2,6 @@ package com.cb.baya.trip;
 
 import com.cb.baya.common.BaseEntity;
 import com.cb.baya.transport.Transport;
-import com.cb.baya.tsp.Stage;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.Setter;
@@ -31,8 +30,8 @@ public class Trip extends BaseEntity {
   @JoinColumn(name = "transport_id", referencedColumnName = "id")
   private Transport transport;
 
-  @Column(name = "stage", length = 50, unique = true, nullable = false)
-  private Stage stage;
+  @Column(name = "stage", length = 25, unique = true, nullable = false)
+  private TripStatus status;
 
   @Column(name = "start_date", length = 50, unique = true, nullable = false)
   private Date startDate;

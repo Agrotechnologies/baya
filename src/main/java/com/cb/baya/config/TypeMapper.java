@@ -24,6 +24,8 @@ import com.cb.baya.transport.driver.Driver;
 import com.cb.baya.transport.driver.DriverDto;
 import com.cb.baya.transport.transporter.Transporter;
 import com.cb.baya.transport.transporter.TransporterDto;
+import com.cb.baya.trip.Trip;
+import com.cb.baya.trip.TripDto;
 import com.cb.baya.tsp.ServiceProvider;
 import com.cb.baya.tsp.ServiceProviderDto;
 import org.mapstruct.Mapper;
@@ -83,5 +85,9 @@ public interface TypeMapper {
   Transport map(TransportDto transportDto);
 
   TransportDto map(Transport transport);
+
+  Trip map(TripDto tripDto);
+
+  TripDto map(Trip trip);
 }
 

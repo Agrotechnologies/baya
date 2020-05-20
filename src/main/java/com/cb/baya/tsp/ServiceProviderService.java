@@ -17,7 +17,6 @@ public interface ServiceProviderService {
 
   List<ServiceProvider> findByFirstName(String firstName);
 
-
   Long total();
 
   ServiceProvider update(ServiceProvider serviceProvider);

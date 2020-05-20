@@ -41,6 +41,7 @@ public class ServiceProviderApi implements CrudApi<ServiceProviderDto> {
       .orElseThrow(() -> new BusinessException("Service provider with msisdn " + msisdn + "not found"));
   }
 
+
   @Override
   public ApiResponse<ServiceProviderDto> create(ServiceProviderDto providerDto) {
     log.info("New Registration : {} ", providerDto);
